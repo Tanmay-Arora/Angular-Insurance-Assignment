@@ -1,0 +1,52 @@
+{
+  "insurance": [
+    {
+      "id": 1,
+      "policyNo": "101",
+      "policyHolderName": "Micheal Scott",
+      "policyAmt": "1000000",
+      "emiAmount": "1000",
+      "nomineeName": "Jane"
+    },
+    {
+      "id": 2,
+      "policyNo": 102,
+      "policyHolderName": "Jim",
+      "policyAmt": 200000,
+      "emiAmount": 2000,
+      "nomineeName": "Pam"
+    },
+    {
+      "id": 3,
+      "policyNo": 103,
+      "policyHolderName": "Dwight Schrute",
+      "policyAmt": 500000,
+      "emiAmount": 5000,
+      "nomineeName": "Angela Moss"
+    },
+    {
+      "id": 4,
+      "policyNo": 104,
+      "policyHolderName": "Bob Vance",
+      "policyAmt": 300000,
+      "emiAmount": 2500,
+      "nomineeName": "Meredith"
+    },
+    {
+      "id": 5,
+      "policyNo": 105,
+      "policyHolderName": "Ryan",
+      "policyAmt": 250000,
+      "emiAmount": 2000,
+      "nomineeName": "Kelly"
+    },
+    {
+      "id": 6,
+      "policyNo": 107,
+      "policyHolderName": "Tanmay Arora",
+      "policyAmt": "10000000",
+      "emiAmount": "1000",
+      "nomineeName": "Amit Arora"
+    }
+  ]
+}

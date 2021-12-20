@@ -1,0 +1,89 @@
+
+<div class="container" id="displayElement">
+    <div class="row pt-5">
+        <div class="col-2">
+            <button routerLink="/addRecords" class="btn btn-primary" >Add New
+                Record</button>
+        </div>
+        <div class="col-6 offset-1 d-flex justify-content-end">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle me-2" type="button" id="searchFieldMenu"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Select Search Filter
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="searchFieldMenu">
+                    <li><a class="dropdown-item" data-selection="code" onclick="selectSearchField(this)"
+                            href="#">Insurance Policy Number</a></li>
+                    <li><a class="dropdown-item" data-selection="name" onclick="selectSearchField(this)"
+                            href="#">Policy Holder Name</a></li>
+                    <li><a class="dropdown-item" data-selection="desg" onclick="selectSearchField(this)"
+                            href="#">Nominee Name</a></li>
+                </ul>
+            </div>
+            <input name="searchBox" id="searchBox" class="form-control searchBox me-2" data-task="search"
+                onkeyup="searchFunc(this)" />
+            <button class="btn btn-warning" type="button" data-task="clear"
+                onclick="searchFunc(this)">Clear</button>
+        </div>
+        <div class="col-2 offset-1 d-flex justify-content-end">
+            <div class="dropdown">
+                <button class="btn btn-success dropdown-toggle me-1" type="button" id="filterMenu"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-sliders"></i>&nbsp;&nbsp;Filter Data
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" data-selection="ctcdesc" onclick="selectFilterType(this)"
+                            href="#">Policy Amount: High To Low</a></li>
+                    <li><a class="dropdown-item" data-selection="ctcasc" onclick="selectFilterType(this)"
+                            href="#">Policy Amount: Low To High</a></li>
+                    <li><a class="dropdown-item" data-selection="nameasc" onclick="selectFilterType(this)"
+                            href="#">Holder's Name: Ascending</a></li>
+                    <li><a class="dropdown-item" data-selection="namedesc" onclick="selectFilterType(this)"
+                            href="#">Holder's Name: Descending</a></li>
+                </ul>
+            </div>
+            <button class="text-danger clearFilterBtn d-none" id="clearFilterBtn" onclick="clearFilter()"><i
+                    class="fa fa-times-circle"></i></button>
+        </div>
+    </div>
+    <div class="row d-block" id="errorRow">
+        <div class="col-4 offset-4">
+            <small class="text-danger">No Records Found, select search filter or add valid search value</small>
+        </div>
+    </div>
+    <div class="row  pt-5">
+        <div class="col-12">
+            <table id="empList" class="table text-center table-bordered table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>Serial No.</th>
+                        <th class="col">Insurance Policy Number</th>
+                        <th class="col">Policy Holder's Name</th>
+                        <th class="col">Policy Amount</th>
+                        <th class="col">EMI Amount</th>
+                        <th class="col">Nominee Name</th>
+                        <th class="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr *ngFor="let ins of insuranceData; index as i" [attr.data-index]="i">
+                      <td>{{ins.id}}</td> 
+                      <td>{{ins.policyNo}}</td>
+                      <td>{{ins.policyHolderName}}</td>
+                      <td>{{ins.policyAmt}}</td>
+                      <td>{{ins.emiAmount}}</td>
+                      <td>{{ins.nomineeName}}</td>
+                      <td><a type="button" id="updateBtn" (click)="onSelectUpdate(ins)"><i class="fa fa-edit text-success"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a type="button" id="deleteBtn" (click)="onSelectDelete(ins)"><i class="fa fa-trash text-danger"></i></a></td>
+                    </tr>
+                    <!--
+                    <td>MTX695</td>
+                    <td>Tanmay Arora</td>
+                    <td>Consultant Trainee</td>
+                    <td>&#x20b9; 6,50,000</td>
+                    <td><a href="#" data-id="MTX695"><i class="fa fa-edit text-success"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-trash text-danger"></i></a></td>
+                    -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>

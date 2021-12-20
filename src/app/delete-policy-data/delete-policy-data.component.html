@@ -1,0 +1,50 @@
+
+<div class="container" id="deleteRecordElement">
+    <div class="row pt-3">
+        <div class="col-6 offset-3">
+            <button routerLink="/policyList" class="btn btn-warning"><i
+                    class="fa fa-arrow-circle-left text-light"></i>&nbsp;&nbsp;Back</button>
+        </div>
+    </div>
+    <div class="row  pt-5">
+        <div class="col-6 offset-3">
+            <h4 class="pb-3" id="formHeading">Delete below Record</h4>
+            <div class="row  pt-1">
+                <div class="col-12">
+                    <table id="empList" class="table text-center table-bordered table-dark table-striped">
+                        <thead>
+                            <tr>
+                                <th>Serial No.</th>
+                                <th class="col">Insurance Policy Number</th>
+                                <th class="col">Policy Holder's Name</th>
+                                <th class="col">Policy Amount</th>
+                                <th class="col">EMI Amount</th>
+                                <th class="col">Nominee Name</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr>
+                              <td>{{this.recordId}}</td> 
+                              <td>{{policyData.policyNo}}</td>
+                              <td>{{policyData.policyHolderName}}</td>
+                              <td>{{policyData.policyAmt}}</td>
+                              <td>{{policyData.emiAmount}}</td>
+                              <td>{{policyData.nomineeName}}</td>
+                              
+                            </tr>
+                            <!--
+                            <td>MTX695</td>
+                            <td>Tanmay Arora</td>
+                            <td>Consultant Trainee</td>
+                            <td>&#x20b9; 6,50,000</td>
+                            <td><a href="#" data-id="MTX695"><i class="fa fa-edit text-success"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-trash text-danger"></i></a></td>
+                            -->
+                        </tbody>
+                    </table>
+                    <button class="btn btn-primary" (click)="deletePolicy()">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
